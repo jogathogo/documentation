@@ -1,0 +1,25 @@
+== Overview
+== Why Fineract
+== Install and run Fineract
+== Prerequisite configurations
+=== Organization
+=== System
+=== Roles and permissions
+== Products configuration
+=== Loans
+=== Fixed deposits
+=== Savings
+=== Recurring deposits
+=== Fees and charges
+== Accounting
+=== Chart of accounts
+=== Search journal entries
+=== Journal entries
+=== Frequent postings
+== Clients management
+== Group management
+== Accounts management
+== Loan management
+== Workflow management
+== Reporting
+== Data import
