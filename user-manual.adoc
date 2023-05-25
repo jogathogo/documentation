@@ -25,5 +25,5 @@
 === Disbursement
 == Workflow management
 == Reporting
-===Table reports
+=== Table reports
 == Data import
