@@ -20,9 +20,9 @@
 == Group management
 == Accounts management
 == Loan management
-===Application
-===Approval
-===Disbursement
+=== Application
+=== Approval
+=== Disbursement
 == Workflow management
 == Reporting
 ===Table reports
