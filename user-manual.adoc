@@ -19,6 +19,9 @@
 == Clients management
 == Group management
 == Accounts management
+=== Open account
+=== Deposit
+=== Withdraw
 == Loan management
 === Application
 === Approval
@@ -26,4 +29,5 @@
 == Workflow management
 == Reporting
 === Table reports
+=== Pentaho reports
 == Data import
