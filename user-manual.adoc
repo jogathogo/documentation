@@ -19,6 +19,9 @@
 == Clients management
 == Group management
 == Accounts management
+=== Open account
+=== Deposit
+=== Withdraw
 == Loan management
 === Application
 === Approval
