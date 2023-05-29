@@ -1,3 +1,5 @@
+This is the begining-of-the-user-manual
+
 == Overview
 == Why Fineract
 == Install and run Fineract
@@ -31,3 +33,10 @@
 === Table reports
 === Pentaho reports
 == Data import
+=== Deposits
+
+The section <<_accounting>> is the entry point to this user manual
+
+<<link-macro-attributes , begining of the user manual>>
+
+Learn how to <<link-macro-attributes,use attributes within the link macro>>.
