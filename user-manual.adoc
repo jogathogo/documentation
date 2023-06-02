@@ -71,6 +71,39 @@ This is especially useful when building a graphical user interface. Most of the 
 Products are templates used to define the expected behavior of a saving,deposit,loan accounts and fees. For example, the minimum and maximum loan term. 
 
 === Loans
+Loan product configuration has a lot of options that allow the platform to cater for a wide range of use cases. These configurations can be combined to meet the most common scenarios and some unique ones.
+
+* Amortization: 
+** Equal installments 
+** Equal principal installment
+* Interest method: 
+** Flat 
+** Declining balance
+* Repayment strategy(this determines distribution priority of amount repaid)
+- Penalties, Fees, Interest, Principal order
+- Overdue/Due Fee/Int,Principal
+- Principal, Interest, Penalties, Fees Order
+- Interest, Principal, Penalties, Fees Order
+- Early Repayment Strategy
+- HeavensFamily Unique
+- Creocore Unique
+* Floating(variable) interest or fixed
+* Repayment periods
+- Weekly
+- Monthly
+- Daily
+* Moratorium on principal/interest or both
+* Interest free period
+* Arrears tolerance
+* Days in a year can be set as [360,364,365 or actual]
+* Tracking non perfoming loans
+* Loan top up(refinance)
+* Interest recalculation
+* Loan guarantee using customer savings
+* Multiple disbursement(tranche) loans
+* Overdue penalty charge
+* Accounting integration with cash based, periodic accrual and upfront accrual support
+
 === Fixed deposits
 === Savings
 === Recurring deposits
