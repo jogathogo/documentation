@@ -68,6 +68,8 @@ Fields that require options such as client gender, address type and so on are cr
 This is especially useful when building a graphical user interface. Most of the drop down fields options will be defined and managed here.
 
 == Products configuration
+Products are templates used to define the expected behavior of a saving,deposit,loan accounts and fees. For example, the minimum and maximum loan term. 
+
 === Loans
 === Fixed deposits
 === Savings
