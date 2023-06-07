@@ -1,7 +1,12 @@
 This is the begining-of-the-user-manual
 
 == Overview
-Fineract is a headless core banking platform meaning it does not have a UI(the Mifos UI generally works with Fineract but may not fully support all apache fineract features). It is fully API driven whereby all operations are carried out by making API calls and getting a response.
+Fineract is a headless core banking platform meaning it does not have a UI. It is fully API driven whereby all operations are carried out by making API calls and getting a response.
+[attributes]
+....
+the Mifos UI generally works with Fineract but may not fully support all apache fineract features.
+....
+
 
 The platform supports most of the standard banking operations: client management, account management, loans, accounting, short/long term deposits and reporting.
 
@@ -18,7 +23,8 @@ Fineract is a feature rich open source core banking platform and compares well w
 * Fully API driven allowing building of applications on top of it and super easy to integrate third party services
 
 == Quick install and run Fineract
-Fineract is a Springboot application and can be deployed like any other such app. To get the platform up and running fast, follow these steps:
+Fineract is a Springboot application and can be deployed like any other such app. To get the platform up and running fast, follow these steps: 
+
 * one
 * two
 * three
@@ -104,31 +110,177 @@ Loan product configuration has a lot of options that allow the platform to cater
 * Overdue penalty charge
 * Accounting integration with cash based, periodic accrual and upfront accrual support
 
+
+[attributes]
+....
+PS: In the current version the following financing products are not supported out of the box:
+
+* Islamic finance
+* Buy now Pay later
+* Bullet loans
+
+That said, the framework to support these is available. Necessary modifications can be added with the help of a fineract service provider.
+....
+
 === Fixed deposits
+Fixed deposit product configurations support standard term saving products i.e:
+
+* Min - Max Deposit amount
+* Min - Max Deposit term
+* Interest compounding period can be: daily, monthly, quarterly, semi annual, annually
+* Interest posting period can be: daily, monthly, quarterly, semi annual, annually
+* Interest calculation can be based on: Daily balance or Daily average balance
+* Days in year can be 360 or 365
+* Pre-closure penalty
+* Apply withholding tax on interest posted
+* Accounting entries fully supported
+* Interest rate based on term and amount
+* Apply fees
+
+
 === Savings
+The savings module can be used for both current and savings products by setting interest rate as zero for current accounts.
+
+The following standard account features are supported:
+
+* Interest rate(only fixed rate is supported, variable rate not supported)
+* Interest compounding period can be: daily, monthly, quarterly, semi annual, annually
+* Interest posting period can be: daily, monthly, quarterly, semi annual, annually
+* Interest calculation can be based on: Daily balance or Daily average balance
+* Days in year can be 360 or 365
+* Min opening balance
+* Lock in period
+* Balance required for interest calculation
+* Min balance
+* Overdraft
+* Dormancy tracking
+* Apply withholding tax on interest posted
+* Apply fees
+* Apply Lien on account
+* Accounting entries fully supported
+
+
 === Recurring deposits
+This product supports use cases where a customer sets a target value they want to save over a period and frequecy. For example, the customer may set a weekly deposit of 1000 for 10 weeks. The system then generates the target principal amount and interest.
+
+The actual interest earned will depend on the actual deposits made.
+
+Supported configurations include:
+
+* Min - Max Deposit amount
+* Min - Max Deposit term
+* Interest compounding period can be: daily, monthly, quarterly, semi annual, annually
+* Interest posting period can be: daily, monthly, quarterly, semi annual, annually
+* Interest calculation can be based on: Daily balance or Daily average balance
+* Days in year can be 360 or 365
+* Pre-closure penalty
+* Apply withholding tax on interest posted
+* Accounting entries fully supported
+* Interest rate based on term and amount
+* Apply fees
+* Making deposits mandatory
+* Balance required for interest calculation
+* Deposit frequency: daily, weekly, monthly, years
+* Allow withdrawals
+* Lock-in period
+* Apply advance payments towards future instalments
+
 === Fees and charges
+Fees can be applied to:
+* Deposit and loan accounts. 
+* Clients accounts
+* Shares
+
+Supported configurations include:
+
+* Charge time, ex. disbursement, withdrawal, installment fee, overdraft fee, etc
+* Calculation method: Flat or %
+* Payment method: Regular or transfer from other account(s)
+* Activate or deactivate
+* Charge time types 
+
+|===
+|*Deposit Accounts* |*Loan Accounts* |*Shares* |*Client*
+
+| Activation | Disbursement |Activation |Specified due date
+| Withdrawal | Installment |Purchase |
+| Annual | Overdue fee |Redeem |
+| Monthly | Tranche disbursement | |
+| Weekly | Specified due date | |
+| Overdraft | |  |
+| Dormancy | | | 
+| Specified due date | | |
+|===
+
 == Accounting
-=== Chart of accounts
-=== Search journal entries
-=== Journal entries
-=== Frequent postings
+Accounting is fully supported for customer related transactions i.e all transactions in savings, deposits, loan and fees result atleast one journals entry with the priciple of double entry being adhered to.
+
+GL mapping for each transaction type in loan, deposit, fees and savings account is done when configuring these products.
+
+The accounting module allows for:
+
+* Creation and management of the chart of accounts
+* Search of journal entries
+* Creation of manual journal entries
+* Frequent posting by creating accounting rules
+
 == Clients management
-== Group management
+The platform supports management of a client lifecycle from application, approval, activation all the way to closure. The following features are supported:
+
+* Client KYC details capture(application)
+* Client activation
+* Transfer
+* Close
+* Reactivation
+
+KYC details capture can be extended using the Data Table feature where additional data is attached to the client profile without development effort. The data can be text, string, number, drop down, etc
+
 == Accounts management
-=== Open account
-=== Deposit
-=== Withdraw
+Accounts are created under the client profile. A single customer profile can have multiple accounts. These can be current accounts, saving accounts, term deposit accounts or recurring deposit accounts.
+
+Each account will allow:
+
+* Deposit
+* Withdrawal
+* Apply fees/penalties
+* Post interest
+* Transfer funds
+* Assign staff
+* Hold funds
+* Block/unblock debit/credit
+* Collect withholding tax
+* Close the account
+
 == Loan management
-=== Application
-=== Approval
-=== Disbursement
-== Workflow management
+The platform supports all standard activities that happen throughout a typical life cycle of a loan account i.e:
+
+* Application
+* Approval or rejection
+* Disbursement
+* Repayment
+* Restructure
+** Extend loan term
+** Change interest rate mid term
+** Mid term grace period
+** Change repayment date
+** Change EMI
+* Waive interest
+* Write off
+* Recover written off loans
+* Prepay
+* Foreclose
+
 == Reporting
-=== Table reports
-=== Pentaho reports
+There are over 80 reports available out of the box that provide detailed insights into finance, loans, savings/deposits and clients.
+
+These reports cover most of the reporting needs of a typical financial institution. The platform supports addition of new reports in the form of table reports that can be exported to csv format.
+
+For more complex reports, integration with Pentaho is necessary and fully supported. See contributor section for details on how to integrate pentaho.
+
+For advance reporting, analytics and dashboarding, integration with tools like spagoBi, tableau, etc is highly recommended.
+
 == Data import
-=== Deposits
+Fineract supports bulk data import using excel templates. The user downloads the templates, fills in the data and uploads the file. Once processed, the system will show the status of each record giving details of failed imports which can be reuploaded upon correction of the issue raised.
 
 The section <<_accounting>> is the entry point to this user manual
 
