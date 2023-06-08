@@ -1,5 +1,3 @@
-This is the begining-of-the-user-manual
-
 == Overview
 Fineract is a headless core banking platform meaning it does not have a UI. It is fully API driven whereby all operations are carried out by making API calls and getting a response.
 [attributes]
@@ -281,9 +279,3 @@ For advance reporting, analytics and dashboarding, integration with tools like s
 
 == Data import
 Fineract supports bulk data import using excel templates. The user downloads the templates, fills in the data and uploads the file. Once processed, the system will show the status of each record giving details of failed imports which can be reuploaded upon correction of the issue raised.
-
-The section <<_accounting>> is the entry point to this user manual
-
-<<link-macro-attributes , begining of the user manual>>
-
-Learn how to <<link-macro-attributes,use attributes within the link macro>>.
