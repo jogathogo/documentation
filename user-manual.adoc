@@ -271,6 +271,9 @@ The platform supports all standard activities that happen throughout a typical l
 == Reporting
 There are over 80 reports available out of the box that provide detailed insights into finance, loans, savings/deposits and clients.
 
+[sidebar]
+example of sidebar content
+
 These reports cover most of the reporting needs of a typical financial institution. The platform supports addition of new reports in the form of table reports that can be exported to csv format.
 
 For more complex reports, integration with Pentaho is necessary and fully supported. See contributor section for details on how to integrate pentaho.
