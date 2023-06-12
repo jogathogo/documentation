@@ -1,0 +1,4 @@
+* Home
+** File
+** Edit
+* Settings
